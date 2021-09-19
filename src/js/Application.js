@@ -31,6 +31,18 @@ export default class Application extends EventEmitter {
       const card = new Card({ ...pizza });
       card.render();
 
+
+      // handle login for notification showing and closing
+      card.on(Card.events.ADD_TO_CART, ({type, price})=>{
+        const notification = new Notification();
+        notification.render( type, price );
+        console.log(notification);
+        document.querySelector('.notifications')
+        .appendChild(notification.container);
+
+        Notification.closeNotification();
+      })
+
       document.querySelector(".main").appendChild(card.container);
     });
 
