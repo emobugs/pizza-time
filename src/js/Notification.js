@@ -31,12 +31,9 @@ export default class Notification {
 
   static closeNotification(){
     document.querySelector('.notifications').addEventListener('click', (e)=>{
-      console.log(e.target);
-      console.log(e.target.parentElement.parentElement);
       if(e.target.parentElement.parentElement.className === ('notification-container')){
         e.target.parentElement.parentElement.remove();
       }
-      // this.container.remove();
     });
 
   }

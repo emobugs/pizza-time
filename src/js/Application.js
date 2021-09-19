@@ -36,7 +36,6 @@ export default class Application extends EventEmitter {
       card.on(Card.events.ADD_TO_CART, ({type, price})=>{
         const notification = new Notification();
         notification.render( type, price );
-        console.log(notification);
         document.querySelector('.notifications')
         .appendChild(notification.container);
 
