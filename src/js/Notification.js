@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import {formatCurrency} from './utils';
 
 export default class Notification {
   static get types() {
@@ -20,7 +21,7 @@ export default class Notification {
   "is-danger" : type === Notification.types.HAWAIIAN,
 })}">
   <button class="delete"></button>
-  🍕 <span class="type">${type}</span> (<span class="price">${price}</span>) has been added to your order.
+  🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
     this.container.innerHTML = template;
