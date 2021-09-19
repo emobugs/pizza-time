@@ -15,7 +15,7 @@ export default class Notification {
     this.container.classList.add("notification-container");
   }
 
-  render(type,price) {
+  render(type, price) {
     const template = `
 <div class="notification type-${type} ${classNames({
   "is-danger" : type === Notification.types.HAWAIIAN,
@@ -26,8 +26,9 @@ export default class Notification {
     `;
     this.container.innerHTML = template;
 
-    
   }
+
+  empty(){}
 
   static closeNotification(){
     document.querySelector('.notifications').addEventListener('click', (e)=>{
